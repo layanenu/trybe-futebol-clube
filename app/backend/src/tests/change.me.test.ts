@@ -4,15 +4,14 @@ import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 
 import { app } from '../app';
-import Example from '../database/models/ExampleModel';
-
-import { Response } from 'superagent';
+import Team from '../database/models/Team';
+import { Model } from 'sequelize';
 
 chai.use(chaiHttp);
 
 const { expect } = chai;
 
-describe('Seu teste', () => {
+describe('Usando o método GET em /teams', () => {
   /**
    * Exemplo do uso de stubs com tipos
    */
@@ -39,7 +38,23 @@ describe('Seu teste', () => {
   //   expect(...)
   // });
 
-  it('Seu sub-teste', () => {
-    expect(false).to.be.eq(true);
+  afterEach(function () {
+    sinon.restore();
+  });
+
+  it('Retorna todos os times corretamente', async () => {
+
+    const mockTeams = [
+      { id: 1, teamName: 'Avaí/Kindermann' } as Team,
+      { id: 2, teamName: 'Bahia' } as Team,
+      { id: 3, teamName: 'Botafogo' } as Team,
+    ]
+
+    // Action
+    const response = await chai.request(app).get('teams');
+    // Assertions
+    expect(response.status).to.be.deep.equal(200);
+    expect(response.body.teams).to.deep.equal(mockTeams);
   });
 });
+
