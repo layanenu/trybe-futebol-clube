@@ -1,6 +1,5 @@
 'use strict';
 
-
 module.exports = {
  async up (queryInterface, Sequelize) {
    await queryInterface.createTable('matches', {
@@ -14,17 +13,30 @@ module.exports = {
      homeTeamId: {
        allowNull: false,
        type: Sequelize.INTEGER,
-       field: 'home_team_id'
+       field: 'home_team_id',
+       references: {
+        model: 'teams',
+        key: 'id',
+       },
+       onDelete: 'CASCADE',
+       onUpdate: 'CASCADE'
      },
      homeTeamGoals: {
        allowNull: false,
        type: Sequelize.INTEGER,
        field: 'home_team_goals'
      },
+     // foreign key
      awayTeamId: {
        allowNull: false,
        type: Sequelize.INTEGER,
-       field: 'away_team_id'
+       field: 'away_team_id',
+       references: {
+        model: 'teams',
+        key: 'id',
+       },
+       onDelete: 'CASCADE',
+       onUpdate: 'CASCADE'
      },
      awayTeamGoals: {
        allowNull: false,
@@ -38,7 +50,6 @@ module.exports = {
      }
    });
  },
-
 
  async down (queryInterface, _) {
     await queryInterface.dropTable('matches');

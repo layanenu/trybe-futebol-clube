@@ -12,7 +12,7 @@ const { expect } = chai;
 
 describe('Testando a rota /teams', () => {
 
-  afterEach(function () {
+  afterEach(function() {
     sinon.restore();
   });
 

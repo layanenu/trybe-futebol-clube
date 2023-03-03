@@ -1,17 +1,20 @@
 import * as express from 'express';
-import teamRouters from './api/routers/team.router';
+import router from './api/routers';
 
 class App {
   public app: express.Express;
 
   constructor() {
     this.app = express();
-
     this.config();
     this.routes();
 
     // Não remover essa rota
     this.app.get('/', (req, res) => res.json({ ok: true }));
+  }
+
+  private routes(): void {
+    this.app.use(router);
   }
 
   private config():void {
@@ -24,10 +27,14 @@ class App {
 
     this.app.use(express.json());
     this.app.use(accessControl);
-  }
-
-  private routes(): void {
-    this.app.use('/teams', teamRouters);
+    this.app.use((
+      err: Error,
+      _req: express.Request,
+      res: express.Response,
+      _next: express.NextFunction,
+    ) => {
+      res.status(500).json(err.message);
+    });
   }
 
   public start(PORT: string | number):void {

@@ -13,22 +13,18 @@ module.exports = {
      username: {
        allowNull: false,
        type: Sequelize.STRING,
-       field: 'username'
      },
      role: {
        allowNull: false,
        type: Sequelize.STRING,
-       field: 'role'
      },
      email: {
        allowNull: false,
        type: Sequelize.STRING,
-       field: 'email'
      },
      password: {
        allowNull: false,
        type: Sequelize.STRING,
-       field: 'password'
    }
    });
  },
@@ -38,6 +34,3 @@ module.exports = {
    await queryInterface.dropTable('users');
  }
 };
-
-
-

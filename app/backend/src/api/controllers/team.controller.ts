@@ -1,21 +1,26 @@
-import { Request, Response } from 'express';
-import ITeamService from '../interfaces/ITeamService';
+import { Request, Response, NextFunction } from 'express';
+import { TeamService } from '../services';
 
 class TeamController {
-  private _service: ITeamService;
+  private service: TeamService = new TeamService();
 
-  constructor(service: ITeamService) {
-    this._service = service;
+  async getAll(req: Request, res: Response, next: NextFunction) {
+    try {
+      const { status, message } = await this.service.getAll();
+      res.status(status).json(message);
+    } catch (error) {
+      next(error);
+    }
   }
 
-  public async readAll(req: Request, res: Response): Promise<Response | void> {
-    const response = await this._service.readAll();
-    res.status(200).json(response);
-  }
-
-  public async readOne(req: Request, res: Response): Promise<Response | void> {
-    const response = await this._service.readOne(Number(req.params.id));
-    res.status(200).json(response);
+  async getById(req: Request, res: Response, next: NextFunction) {
+    try {
+      const { id } = req.params;
+      const { status, message } = await this.service.getById(+id);
+      res.status(status).json(message);
+    } catch (error) {
+      next(error);
+    }
   }
 }
 
