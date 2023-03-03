@@ -59,6 +59,9 @@ Matche.init({
 });
 
 Matche.belongsTo(Team, { foreignKey: 'homeTeamId', as: 'homeTeam' });
+Team.hasMany(Matche, { foreignKey: 'homeTeamId', as: 'matchesHome' });
+
 Matche.belongsTo(Team, { foreignKey: 'awayTeamId', as: 'awayTeam' });
+Team.hasMany(Matche, { foreignKey: 'awayTeamId', as: 'matchesAway' });
 
 export default Matche;
