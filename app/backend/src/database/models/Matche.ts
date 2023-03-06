@@ -3,7 +3,7 @@ import db from '.';
 import Team from './Team';
 
 class Matche extends Model {
-  declare readonly id: number;
+  declare id: number;
   declare homeTeamId: number;
   declare homeTeamGoals: number;
   declare awayTeamId: number;
@@ -49,6 +49,7 @@ Matche.init({
   inProgress: {
     allowNull: false,
     type: BOOLEAN,
+    defaultValue: true,
   },
 }, {
   sequelize: db,

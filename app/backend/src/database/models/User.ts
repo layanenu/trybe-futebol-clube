@@ -2,7 +2,7 @@ import { Model, STRING, INTEGER } from 'sequelize';
 import db from '.';
 
 class User extends Model {
-  declare readonly id: number;
+  declare id: number;
   declare username: string;
   declare role: string;
   declare email: string;
