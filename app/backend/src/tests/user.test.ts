@@ -45,51 +45,33 @@ describe('Testando a rota /login', () => {
     "password": "secret_admin"
   }
 
-  // EMAIL VAZIO
   it('Retorna 400 se email vazio', async () => {
-    //Action 
     const response = await chai.request(app).post('/login').send(mockEmailVazio)
-    //Assertions
     expect(response.status).to.be.deep.equal(400);
   })
 
-  // SENHA VAZIA
   it('Retorna 400 se password vazio', async () => {
-    //Action 
     const response = await chai.request(app).post('/login').send(mockPasswordVazio)
-    //Assertions
     expect(response.status).to.be.deep.equal(400);
   })
 
-  // EMAIL INVALIDO
   it('Retorna 401 se email inválido', async () => {
-    //Action 
     const response = await chai.request(app).post('/login').send(mockEmailInvalido)
-    //Assertions
     expect(response.status).to.be.deep.equal(401);
   })
 
-  // SENHA INVALIDA
   it('Retorna 401 se password inválido', async () => {
-    //Action 
     const response = await chai.request(app).post('/login').send(mockPasswordInvalido)
-    //Assertions
     expect(response.status).to.be.deep.equal(401);
   })
   
-  // USER INVALIDO
   it('Retorna 401 se usuário inválido', async () => {
-    //Action
     const response = await chai.request(app).post('/login').send(mockUserInvalido)
-    //Assertions
     expect(response.status).to.be.deep.equal(401);
   });
 
-  // USER VALIDO
   it('Retorna 200 se usuário válido', async () => {
-    //Action 
     const response = await chai.request(app).post('/login').send(mockUserValido)
-    //Assertions
     expect(response.status).to.be.deep.equal(200);
   })
 });

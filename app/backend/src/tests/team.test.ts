@@ -27,19 +27,13 @@ describe('Testando a rota /teams', () => {
   ]
 
   it('Retorna todos os times corretamente', async () => {
-    // Action
     const response = await chai.request(app).get('/teams');
-    // Assertions
     expect(response.status).to.be.deep.equal(200);
-    // expect(response.body.teams).to.deep.equal(mockTeams);
   });
 
   it('Busca pelo id através de /teams:id', async () => {
-    // Action
     const response = await chai.request(app).get('/teams:1');
-    // Assertions
     expect(response.status).to.be.deep.equal(200);
-    // expect(response.body.teams).to.deep.equal(mockTeam);
   });
   
 });
