@@ -46,6 +46,7 @@ describe('Testando a rota /login', () => {
   }
 
   it('Retorna 400 se email vazio', async () => {
+    // Action
     const response = await chai.request(app).post('/login').send(mockEmailVazio)
     expect(response.status).to.be.deep.equal(400);
   })
