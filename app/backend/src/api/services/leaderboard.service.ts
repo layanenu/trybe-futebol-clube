@@ -4,7 +4,8 @@ import Matche from '../../database/models/Matche';
 import Team from '../../database/models/Team';
 import { generateResponse } from '../../utils/generateResponse';
 import ILeaderboard from '../interfaces/Ileaderboard';
-import { rank, grResults, orderRank } from '../../utils/functionsLeaderboard';
+import { rank, grResults, grResultsGeneral, orderRank, rankGeneral,
+} from '../../utils/functionsLeaderboard';
 
 class LeaderboardService {
   private matche: ModelStatic<Matche> = Matche;
@@ -26,6 +27,46 @@ class LeaderboardService {
       result.push(
         rank(elem, results, teamMatchers, ['homeTeamGoals', 'awayTeamGoals']),
       );
+    });
+
+    return generateResponse(200, orderRank(result));
+  }
+
+  async awayTeamPerformance(): Promise<IResponse> {
+    const teams = await this.team.findAll();
+    const matches = await this.matche.findAll({ where: { inProgress: false } });
+
+    const result: ILeaderboard[] = [];
+
+    teams.forEach((e) => {
+      const matchesByTeam = matches.filter((el) => el.awayTeamId === e.id);
+      const results = grResults(matchesByTeam, [
+        'awayTeamGoals',
+        'homeTeamGoals',
+      ]);
+
+      result.push(
+        rank(e, results, matchesByTeam, ['awayTeamGoals', 'homeTeamGoals']),
+      );
+    });
+
+    return generateResponse(200, orderRank(result));
+  }
+
+  async rank(): Promise<IResponse> {
+    const teams = await this.team.findAll();
+    const matches = await this.matche.findAll({ where: { inProgress: false } });
+
+    const result: ILeaderboard[] = [];
+
+    teams.forEach((e) => {
+      const matchesByTeam = matches.filter(
+        (el) => el.awayTeamId === e.id || el.homeTeamId === e.id,
+      );
+
+      const results = grResultsGeneral(e.id, matchesByTeam);
+
+      result.push(rankGeneral(e, results, matchesByTeam));
     });
 
     return generateResponse(200, orderRank(result));

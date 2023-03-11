@@ -7,4 +7,10 @@ const leaderboardController = new LeaderboardController();
 leaderboardRoutes.get('/leaderboard/home', leaderboardController
   .homeTeamPerformance.bind(leaderboardController));
 
+leaderboardRoutes.get('/leaderboard/away', leaderboardController
+  .awayTeamPerformance.bind(leaderboardController));
+
+leaderboardRoutes.get('/leaderboard', leaderboardController
+  .rank.bind(leaderboardController));
+
 export default leaderboardRoutes;

@@ -12,6 +12,24 @@ class LeaderboardController {
       next(error);
     }
   }
+
+  async awayTeamPerformance(_req: Request, res: Response, next: NextFunction) {
+    try {
+      const { status, message } = await this.service.awayTeamPerformance();
+      res.status(status).json(message);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async rank(_req: Request, res: Response, next: NextFunction) {
+    try {
+      const { status, message } = await this.service.rank();
+      res.status(status).json(message);
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 export default LeaderboardController;
