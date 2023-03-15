@@ -1,13 +1,13 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Trybe Futebol Clube	:soccer:
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+## :round_pushpin: Sobre: 
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+O  Trybe Futebol Clube (TFC) é um site informativo sobre partidas e classificações de futebol. Foi um dos projetos avaliativos do módulo de back-end da Trybe.
+
+O Frontent já veio pronto e o objetivo foi desenvolver uma API (utilizando o método TDD) e também integrar - através do docker-compose - as aplicações para que elas funcionem consumindo um banco de dados. A modelagem do banco de dados foi feita através do Sequelize. 
+
+## :round_pushpin: Layout do site: 
+
+https://user-images.githubusercontent.com/99842422/225292867-a0b34440-c8d3-4a6f-aa4a-9f77327fb36b.mov
+
+
