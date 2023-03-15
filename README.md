@@ -1,3 +1,4 @@
+<strong>Trybe Futebol Clube :soccer: </strong>
 
 <strong>:wavy_dash: Sobre</strong>
 
