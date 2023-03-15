@@ -1,4 +1,7 @@
-# Trybe Futebol Clube	:soccer:
+
+<strong>:wavy_dash: Sobre</strong>
+ 
+<strong>:wavy_dash: Sobre</strong>
 
 ## :round_pushpin: Sobre: 
 
@@ -8,6 +11,18 @@ O Frontent j√° veio pronto e o objetivo foi desenvolver uma API (utilizando o m√
 
 ## :round_pushpin: Layout do site: 
 
-https://user-images.githubusercontent.com/99842422/225292867-a0b34440-c8d3-4a6f-aa4a-9f77327fb36b.mov
 
+<br />
+<details>
+  <summary><strong>Stacks utilizadas</strong></summary><br />
+
+  * Node JS
+  * Typescript
+  * Express
+  * Sequelize
+  * Docker
+  * Mocha
+  * Chai
+
+</details>
 
