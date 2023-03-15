@@ -7,6 +7,8 @@ O Frontent já veio pronto e o objetivo foi desenvolver uma API (utilizando o m�
 
 <strong>:wavy_dash: Layout</strong>
 
+https://user-images.githubusercontent.com/99842422/225306160-029a2575-767e-4e5e-9f67-96a23cdbcf1f.mov
+
 <br />
 
 <strong>:wavy_dash: Stacks utilizadas</strong>
@@ -40,6 +42,23 @@ O Frontent já veio pronto e o objetivo foi desenvolver uma API (utilizando o m�
 Obs: O seu docker-compose precisa estar na versão 1.29 ou superior.
  
 Clone o projeto: <br />
-`git clone `
-</details>
+`git clone git@github.com:layanenu/trybe-futebol-clube.git`
 
+Entre no diretório do projeto: <br />
+`cd trybe-futebol-clube`
+  
+Entre no diretório app: <br />
+`cd app`
+  
+Suba a orquestração de containers: <br />
+`docker-compose up --build -d`
+  
+A aplicação poderá ser acessada através de: <br />
+`Front-end: localhost:3000`<br />
+`Back-end: localhost:3001`
+  
+Credenciais para o login: <br />
+`login: admin@admin.com`<br />
+`senha: secret_admin` 
+  
+</details>
