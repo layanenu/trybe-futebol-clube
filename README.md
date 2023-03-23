@@ -12,6 +12,23 @@ https://user-images.githubusercontent.com/99842422/225306160-029a2575-767e-4e5e-
 
 <br />
 
+<details>
+  <summary><strong> Legenda </strong></summary><br />
+
+  * Classificação: posição na classificação;
+  * Time: nome do time;
+  * P: total de pontos;
+  * J: total de jogos;
+  * V: total de vitórias;
+  * E: total de empates;
+  * D: total de derrotas;
+  * GP: gols marcados a favor;
+  * GC: gols sofridos;
+  * SG: saldo total de gols;
+  * %: aproveitamento do time.
+
+</details>
+
 <strong>:wavy_dash: Stacks utilizadas</strong>
 <br />
 
