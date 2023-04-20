@@ -29,9 +29,6 @@ https://user-images.githubusercontent.com/99842422/225306160-029a2575-767e-4e5e-
 
 </details>
 
-<strong>:wavy_dash: Stacks utilizadas</strong>
-<br />
-
 <details>
   <summary><strong> Stacks </strong></summary><br />
 
@@ -58,25 +55,47 @@ https://user-images.githubusercontent.com/99842422/225306160-029a2575-767e-4e5e-
 <summary><strong>🐳 Rodando com o Docker</strong></summary><br />
 
 Obs: O seu docker-compose precisa estar na versão 1.29 ou superior.
- 
-Clone o projeto: <br />
-`git clone git@github.com:layanenu/trybe-futebol-clube.git`
 
-Entre no diretório do projeto: <br />
-`cd trybe-futebol-clube`
+Clone o repositório:
+```bash
+git clone git@github.com:layanenu/trybe-futebol-clube.git
+```
+
+Entre no diretório do projeto: 
+```bash
+cd trybe-futebol-clube
+```
   
-Entre no diretório app: <br />
-`cd app`
+Entre no diretório app:
+```bash
+cd app
+```
   
-Suba a orquestração de containers: <br />
-`docker-compose up --build -d`
+Suba a orquestração de containers:
+```bash
+docker-compose up --build -d
+```
   
 A aplicação poderá ser acessada através de: <br />
-`Front-end: localhost:3000`<br />
-`Back-end: localhost:3001`
+<br />
+Front-end: 
+```bash
+localhost:3000
+```
+
+Back-end: 
+```bash
+localhost:3001
+```
   
 Credenciais para o login: <br />
-`login: admin@admin.com`<br />
-`senha: secret_admin` 
-  
+<br />
+Login: 
+```bash
+admin@admin.com
+```
+Senha: 
+```bash
+secret_admin
+```
 </details>
